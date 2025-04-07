@@ -269,6 +269,7 @@ public class CodingTest {
         }
         return (secondMax == Integer.MIN_VALUE) ? -1 : secondMax;
     }
+
     // TODO Push All Zeroes to End of an Array Program
     public static int[] pushAllZeros(int[] arr) {
         int[] allNonZero = Arrays.stream(arr).filter(num -> num != 0).toArray();
@@ -277,13 +278,14 @@ public class CodingTest {
         return result;
     }
 
-   //TODO  int[] arr = {1,2,3,4};  //output will = 9,8,7,6
-        public static int[] addShiftedElement(int[] arr){
+    //TODO  int[] arr = {1,2,3,4};  //output will = 9,8,7,6
+    public static int[] addShiftedElement(int[] arr) {
         int totalSum = stream(arr).sum();
         int[] array = stream(arr).map(num -> totalSum - num).toArray();
         return array;
     }
-            //TODO String str = "AACCCEEA"  //Output will  2A3C2E1A
+
+    //TODO String str = "AACCCEEA"  //Output will  2A3C2E1A
     public static String getCompressedString(String str) {
         StringBuilder sb = new StringBuilder();
         int count = 1;
@@ -300,7 +302,7 @@ public class CodingTest {
         }
         return sb.toString();
     }
-        // TODO find the common character in the value output will = B C
+    // TODO find the common character in the value output will = B C
          /*
         Map<Integer, List<String>> map1 = new HashMap<>();
         map1.put(1, Arrays.asList("A","B","C"));
@@ -311,10 +313,14 @@ public class CodingTest {
          */
 
     public static Set<String> findCommonCharacters(Map<Integer, List<String>> map) {
-            return map.values().stream().map(HashSet::new)
-                    .reduce((set1, set2) -> { set1.retainAll(set2); return set1;})
-                    .orElse(null);
-        }
+        return map.values().stream().map(HashSet::new)
+                .reduce((set1, set2) -> {
+                    set1.retainAll(set2);
+                    return set1;
+                })
+                .orElse(null);
+    }
+
     /*
     Given a String array, where each entry represents the name and marks of the student.
     TODO Find the average marks scored by each of these students?
@@ -333,22 +339,49 @@ Chetan: (67 + 84)/2
                     Collectors.averagingDouble(
                             s -> Double.parseDouble(s[1]))));
 
-/*
-Write a program Sum up the all the digits that are there in string until you reach single digit.
-Example: input: 123456
-when we sum all digits of "123456" then you will get "21" then when you sum up all digits in "21" then we will get "3"
-output: 3
- */
-public static int sumToSingleDigit(String input) {
-    int sum = input.chars().filter(Character::isDigit).map(Character::getNumericValue).sum();
-    while (sum >= 10) {
-        sum = String.valueOf(sum).chars().map(Character::getNumericValue).sum();
+    /*
+    Write a program Sum up the all the digits that are there in string until you reach single digit.
+    Example: input: 123456
+    when we sum all digits of "123456" then you will get "21" then when you sum up all digits in "21" then we will get "3"
+    output: 3
+     */
+    public static int sumToSingleDigit(String input) {
+        int sum = input.chars().filter(Character::isDigit).map(Character::getNumericValue).sum();
+        while (sum >= 10) {
+            sum = String.valueOf(sum).chars().map(Character::getNumericValue).sum();
+        }
+        return sum;
     }
-    return sum;
+
+    //TODO find second largest number in the list
+    List<Integer> list = Arrays.asList(1, 3, 5, 23, 7, 9, 8);
+    Integer sort = list.stream().distinct().sorted((a, b) -> b - a).skip(1).findFirst().get();
+
+// TODO How can you sort a list of strings by their length using the Stream API?
+{
+    List<String> names = Arrays.asList("Kartik", "batra", "karan", "Rishi", "Jon");
+    names.stream().sorted((s1, s2) -> Integer.compare(s1.length(), s2.length())).forEach(System.out::println);
 }
 
+/*
+input
+a
+a-b-c
+a-b
+a-c
+b
+a-c-b
+output
+a,b,a-b,a-c,a-b-c,a-c-b
 
-
+ */
+    {
+        List<String> input = Arrays.asList("a", "a-b-c", "a-b", "a-c", "b", "a-c-b");
+        Set<String> sortedSet = new TreeSet<>(input);
+        for (String str : sortedSet) {
+            System.out.println(str);
+        }
+    }
 
 
 

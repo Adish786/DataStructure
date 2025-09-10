@@ -1,6 +1,5 @@
 package com.datastructure.tree;
 
-import com.datastructure.test.Solution;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

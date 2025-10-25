@@ -1,4 +1,4 @@
-package com.datastructure.intervewPattern2025;
+package com.datastructure.intervew2025;
 /*
 Geometric Sequence Triplets
 A geometric sequence triplet is a sequence of three numbers where each successive number is

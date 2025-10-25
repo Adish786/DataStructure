@@ -1,7 +1,5 @@
 package com.datastructure.intervew;
 
-
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -58,22 +56,7 @@ public class CodingJava8 {
 
  */
 
-        /*
-        Input : [2,4,[4,6,7],8,[10]] output : [2,4,4,6,7,8,10]
-         */
- List<Object> input = Arrays.asList(2, 4, Arrays.asList(4, 6, 7), 8, Arrays.asList(10));
 
-        List<Integer> output = input.stream()
-                .flatMap(obj -> {
-                    if (obj instanceof Integer) {
-                        return Stream.of((Integer) obj);
-                    } else if (obj instanceof List) {
-                        return ((List<?>) obj).stream().map(e -> (Integer) e);
-                    }
-                    return Stream.empty();
-                })
-                .collect(Collectors.toList());
-        System.out.println(output);
 
 
 

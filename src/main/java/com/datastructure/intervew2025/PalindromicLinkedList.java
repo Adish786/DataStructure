@@ -1,4 +1,4 @@
-package com.datastructure.intervewPattern2025;
+package com.datastructure.intervew2025;
 /*
 Given the head of a singly linked list, determine if it is a palindrome.
 Example 1:1,2,3,2,1

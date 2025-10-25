@@ -1,4 +1,4 @@
-package com.datastructure.intervewPattern2025;
+package com.datastructure.intervew2025;
 /*
 Next Lexicographical Sequence
 Given a string of lowercase English letters, rearrange the characters to form a new string

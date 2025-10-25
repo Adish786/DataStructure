@@ -1,4 +1,4 @@
-package com.datastructure.intervewPattern2025;
+package com.datastructure.intervew2025;
 /*
 1 -> 2 -> 3 -> 4 -> 5 -> 6
      |         |

@@ -1,4 +1,4 @@
-package com.datastructure.intervewPattern2025;
+package com.datastructure.intervew2025;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

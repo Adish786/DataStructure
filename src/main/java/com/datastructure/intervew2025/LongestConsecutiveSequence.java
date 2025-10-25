@@ -1,4 +1,4 @@
-package com.datastructure.intervewPattern2025;
+package com.datastructure.intervew2025;
 
 import java.util.HashSet;
 import java.util.Set;
